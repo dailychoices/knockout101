@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knockout101", "knockout101\knockout101.csproj", "{AAFE3F25-67BC-44BB-B46E-D6144435A631}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAFE3F25-67BC-44BB-B46E-D6144435A631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFE3F25-67BC-44BB-B46E-D6144435A631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFE3F25-67BC-44BB-B46E-D6144435A631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFE3F25-67BC-44BB-B46E-D6144435A631}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+@*<p>First Name: <span data-bind="text: firstName"></span> </p>*@
+<p>First Name: <input data-bind="value: firstName"></span> </p>
+
+@*<p>Last Name: <span data-bind="text: lastName"></span> </p>*@
+<p>Last Name: <input data-bind="value: lastName"></span> </p>
+<p>Full Name: <input data-bind="text: fullName"></span> </p>
+
+
+@*<h2> Friends </h2>*@
+@*first approach*@
+@*<div data-bind="template: 'friendsTemplate'"></div>
+<script id="friendsTemplate" type="text/html">
+    <ul>
+        {{each(index, friend) friends }}
+            <li> ${ friend.name } - ${ new Date } </li>
+        {{/each}}
+    </ul>
+</script>
+*@
+
+
+@*second for performance approach*@
+<h2> Friends (<span data-bind="text: friends().length"> </span>)</h2>
+<ul data-bind="template: {name: 'friendsTemplate', foreach:friends}"></ul>
+
+<script id="friendsTemplate" type="text/html">
+    ${ $data.name } 
+    <li> 
+        <input data-bind="value: name" />
+        <button data-bind="click: remove"> Remove </button>
+        <lable><input type="checkbox" data-bind="checked: isOnTwitter" /> Is on Twitter </label>
+        <input data-bind="value: twitterName, visible: isOnTwitter" />
+    </li>
+</script>
+
+<button data-bind="click: addFriend, enable: friends().length < 5"> Add Friend</button>
+
+<script type="text/javascript">
+
+    function friend(name) {
+        return {
+            name: ko.observable(name),
+            isOnTwitter: ko.observable(false),
+            twitterName: ko.observable(),
+            remove: function () {
+                viewModel.friends.remove(this);
+            }
+        };
+    }
+
+    var viewModel = {
+        firstName: ko.observable("Henry"),
+        lastName: ko.observable("Lee"),
+        friends: ko.observableArray([new friend("Steve"), new friend("Annie")]),
+        addFriend: function () {
+            this.friends.push(new friend("Another"));
+        }
+    };
+
+    viewModel.fullName = ko.dependentObservable(function () {
+        return this.firstName() + " " + this.lastName();
+    }, viewModel);
+
+    ko.applyBindings(viewModel); 
+</script>

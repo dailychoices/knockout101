@@ -1,0 +1,7 @@
+H:\Henry\Projects\knockout101\knockout101\bin\knockout101.dll
+H:\Henry\Projects\knockout101\knockout101\bin\knockout101.pdb
+H:\Henry\Projects\knockout101\knockout101\bin\EntityFramework.dll
+H:\Henry\Projects\knockout101\knockout101\bin\EntityFramework.xml
+H:\Henry\Projects\knockout101\knockout101\obj\Debug\ResolveAssemblyReference.cache
+H:\Henry\Projects\knockout101\knockout101\obj\Debug\knockout101.dll
+H:\Henry\Projects\knockout101\knockout101\obj\Debug\knockout101.pdb
